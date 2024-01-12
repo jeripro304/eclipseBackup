@@ -1,0 +1,30 @@
+package University;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.*;
+
+public class CollegeBO {
+	DBConnection DB=new DBConnection();
+	
+	public void addCollege(College col) throws Exception {
+		Connection con=DB.getConnection();
+		PreparedStatement ps =con.prepareStatement("insert into university values (?,?,?,?,?,?)");
+		ps.setString(1, col.getName());
+		ps.setString(2, col.getWebsite());
+		ps.setString(3,col.getMobile());
+		ps.setString(4,col.getFounder());
+		ps.setInt(5, col.getNumberOfDept());
+		ps.setDate(6,(Date) col.getStartingDate());
+		ps.executeUpdate();
+		
+	}
+	
+	public List<College> findCollege(List<String> namelist) throws Exception{
+		Connection con=DB.getConnection();
+		List<College> flist=new ArrayList<>();
+		
+		return null;
+		
+	}
+}

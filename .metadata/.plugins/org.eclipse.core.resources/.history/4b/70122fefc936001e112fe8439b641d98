@@ -1,0 +1,69 @@
+package employee.pojo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Mainclass {
+
+	public static void main(String[] args) {
+		try {
+			Scanner sc=new Scanner(System.in);
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("success");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","root");
+			PreparedStatement ps;
+			ResultSet rs;
+			
+			
+			
+			System.out.println("1. Create");
+			System.out.println("2. Update");
+			System.out.println("3. Display");
+			System.out.println("4. Search");
+			System.out.println("5. Delete");
+			System.out.print("Enter the choice");
+			int ch=sc.nextInt();		
+			switch(ch) {
+			case 1:
+				System.out.println("Eneter the id : ");
+				int id=sc.nextInt();
+				System.out.println("Enter the name :");
+				String name=sc.next();
+				System.out.println("Enter the salary :");
+				int salary=sc.nextInt();
+				ps=con.prepareStatement("insert into new_table values(?,?,?)");
+				ps.setInt(1,id);
+				ps.setString(2,name);
+				ps.setInt(3,salary);
+				int result=ps.executeUpdate();
+				if(result==1) {
+					System.out.println("New employee created");
+				}
+				else {
+					System.out.println("Failed to Create");
+				}
+				break;
+				
+				
+				
+				}
+			
+			//while(rs.next()) {
+				//System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt("salary"));
+			//}
+		}
+
+		catch (ClassNotFoundException e) {
+			System.out.println(e);
+		}
+		catch(SQLException e){
+			System.out.println(e);
+		}
+
+	}
+
+}

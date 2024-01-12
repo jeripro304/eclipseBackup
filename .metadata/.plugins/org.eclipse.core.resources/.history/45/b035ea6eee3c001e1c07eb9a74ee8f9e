@@ -1,0 +1,21 @@
+package University;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.*;
+
+public class CollegeBO {
+	DBConnection DB=new DBConnection();
+	
+	public void addCollege(College col) {
+		
+	}
+	
+	public List<College> findCollege(List<String> namelist) throws Exception{
+		Connection con=DB.getConnection();
+		List<College> flist=new ArrayList<>();
+		
+		return null;
+		
+	}
+}

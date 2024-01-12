@@ -1,0 +1,13 @@
+package University;
+
+import java.util.Scanner;
+
+public class Mnclass {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		CollegeBO college=new CollegeBO();
+
+	}
+
+}

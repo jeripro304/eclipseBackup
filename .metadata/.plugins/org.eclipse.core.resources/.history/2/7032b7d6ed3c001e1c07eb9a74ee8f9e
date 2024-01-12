@@ -1,0 +1,12 @@
+package University;
+
+import java.util.List;
+
+public class CollegeBO {
+	public List<College> findCollege(List<String> namelist){
+		
+		
+		return null;
+		
+	}
+}

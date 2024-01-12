@@ -1,0 +1,32 @@
+package University;
+
+import java.util.Scanner;
+
+public class Mnclass {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		CollegeBO college=new CollegeBO();
+		boolean flag=false;
+		while(flag) {
+			System.out.println("1.Create the list of Colleges");
+			System.out.println("2.Search list of Colleges based on list of names");
+			System.out.println("3.Search list of Colleges based on starting date");
+			System.out.println("4.Search list of Colleges based location ");
+			System.out.println("Enter the choice");
+			int ch=sc.nextInt();
+			
+			switch(ch) {
+			case 1:
+				System.out.println("Enter the details as a string");
+				String line=sc.next();
+				String sep[]=line.split(",");
+				int nod=Integer.parseInt(sep[5]);
+				
+				
+				break;
+			}
+		}
+	}
+
+}
